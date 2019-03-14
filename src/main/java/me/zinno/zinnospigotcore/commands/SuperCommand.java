@@ -54,8 +54,8 @@ public abstract class SuperCommand implements CommandExecutor, TabCompleter {
 			sender.sendMessage(preconditions.getNoCommandMessage());
 			return;
 		}
-		
-		subCommand.runCommand(sender, cmd, label, args);
+
+		subCommand.runCommand(sender, cmd, label + " " + args[0], Arrays.copyOfRange(args, 1, args.length));
 	}
 	
 	@Override
